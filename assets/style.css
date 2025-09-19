@@ -1,3 +1,8 @@
+:root{
+    -texy-color: #dbe4ef;
+    -card-front-color: #144480;
+    -card-back-color: #00f4bf;
+}
 body{
     background-color:bisque;
     font-family: Bau Jamjuree;
