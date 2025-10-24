@@ -13,3 +13,8 @@ criaCartao(
     'O que é uma função?',
     'Uma função é um bloco de código que executa alguma tarefa'
 )
+criaCartao(
+    'lingua inglesa',
+    'Como se diz oi em inglês?',
+    'oi em inglês é hi (rai)'
+)
