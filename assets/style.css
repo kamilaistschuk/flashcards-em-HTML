@@ -35,6 +35,7 @@ body {
     transition: transform 300ms ease-in-out;
     position: relative;
     border-radius: 0.6rem;
+    font-size: clamp(0.9rem, 1vw, 1rem); /* tamanho do texto equilibrado */
 }
 
 /* Título dentro do cartão */
@@ -46,7 +47,7 @@ body {
     position: absolute;
     margin: 0.6rem;
     border-radius: 0.6rem;
-    font-size: 1vw;
+    font-size: clamp(0.9rem, 1vw, 1.1rem); /* responsivo sem exagero */
     backface-visibility: hidden;
 }
 
@@ -98,7 +99,7 @@ footer {
 
 footer p {
     text-align: center;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     margin-top: 0.5rem;
 }
 
@@ -112,11 +113,11 @@ footer p {
         flex: 1 0 calc(100% - 1rem);
     }
 
-    .cartao__conteudo h3 {
-        font-size: 3vw;
+    .cartao__conteudo {
+        font-size: clamp(0.9rem, 2.8vw, 1.1rem);
     }
 
-    .cartao__conteudo {
-        font-size: 3.8vw;
+    .cartao__conteudo h3 {
+        font-size: clamp(1rem, 3vw, 1.3rem);
     }
 }
