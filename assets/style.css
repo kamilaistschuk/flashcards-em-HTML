@@ -4,36 +4,40 @@
     --card-back-color: #00F4BF;
 }
 
-
 body {
     background: url('img/bg-desktop.webp');
-    font-family: Bai Jamjuree;
+    font-family: 'Bai Jamjuree', sans-serif;
 }
 
-
+/* Container principal dos cartões */
 #container {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-
+/* Cada cartão individual */
 .cartao {
-    margin: 1rem 1rem;
+    margin: 1rem;
     height: 20rem;
     flex-grow: 1;
-    flex-basis: calc(33% - 6rem);
+    flex-basis: calc(33% - 2rem);
+    position: relative;
+    perspective: 1000px; /* necessário para o efeito de flip */
 }
 
-
+/* Conteúdo do cartão */
 .cartao__conteudo {
     background-color: var(--card-front-color);
     text-align: center;
-    /* background-color: aquamarine; */
     height: 100%;
     transform-style: preserve-3d;
     transition: transform 300ms ease-in-out;
+    position: relative;
+    border-radius: 0.6rem;
 }
 
-
+/* Título dentro do cartão */
 .cartao__conteudo h3 {
     color: var(--text-color);
     border: 1px solid var(--text-color);
@@ -46,45 +50,43 @@ body {
     backface-visibility: hidden;
 }
 
-
+/* Texto das perguntas e respostas */
 .cartao__conteudo p {
-    margin-top: 1rem;
-    padding: 2rem;
     margin-top: 4rem;
+    padding: 2rem;
 }
-
 
 .cartao__conteudo__pergunta p {
     color: var(--text-color);
     font-weight: 500;
 }
 
-
 .cartao__conteudo__resposta p {
     color: var(--card-back-color);
     font-weight: 700;
 }
 
-
+/* Efeito de virar o cartão */
 .cartao:hover .cartao__conteudo {
     transform: rotateY(180deg);
 }
 
-
+/* Faces do cartão (frente e verso) */
 .cartao__conteudo__pergunta,
 .cartao__conteudo__resposta {
     backface-visibility: hidden;
     position: absolute;
     height: 100%;
     width: 100%;
+    top: 0;
+    left: 0;
 }
-
 
 .cartao__conteudo__resposta {
     transform: rotateY(180deg);
 }
 
-
+/* Rodapé */
 footer {
     background-color: black;
     color: white;
@@ -94,26 +96,27 @@ footer {
     height: 2rem;
 }
 
-
 footer p {
     text-align: center;
     font-size: 0.6rem;
     margin-top: 0.5rem;
 }
-@media(max-width:560px){
 
-    body{
-        background: url('img/bg-mobile.webp'), no-repeat cover;
+/* Responsividade */
+@media (max-width: 560px) {
+    body {
+        background: url('img/bg-mobile.webp') no-repeat center center / cover;
     }
 
-    .cartao{
-        flex: 1 0 calc(100% - 1rem)
+    .cartao {
+        flex: 1 0 calc(100% - 1rem);
     }
-}
-.cartao__conteudo h3{
-    font-size: 3vw;
-}
-.cartao__conteudo{
-font-size: 3.8vw;
-}
+
+    .cartao__conteudo h3 {
+        font-size: 3vw;
+    }
+
+    .cartao__conteudo {
+        font-size: 3.8vw;
+    }
 }
